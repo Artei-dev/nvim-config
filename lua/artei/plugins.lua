@@ -63,8 +63,7 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
-
-  -- LSP
+-- LSP
   use "neovim/nvim-lspconfig"  
   use "williamboman/nvim-lsp-installer" -- server installer
 
@@ -85,7 +84,8 @@ return packer.startup(function(use)
     "nvim-lualine/lualine.nvim",
     requries = { "kyazdani42/nvim-web-devicons", opt = true }
   }
-
+  -- Terminal Stuff
+  use "akinsho/toggleterm.nvim"
    
   
 
