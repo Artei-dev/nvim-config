@@ -48,7 +48,7 @@ local location = {
 	padding = 1,
 }
 
--- cool function for progress
+-- show's percentego progress of the file
 local progress = function()
 	local current_line = vim.fn.line(".")
 	local total_lines = vim.fn.line("$")
@@ -66,9 +66,10 @@ lualine.setup({
 		icons_enabled = true,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = { "dashboard", "Outline" },
 		always_divide_middle = true,
+    globalstatus = true,
 	},
 	sections = {
 		lualine_a = { mode  },
