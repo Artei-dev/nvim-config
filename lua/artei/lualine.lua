@@ -27,7 +27,7 @@ local diff = {
 local mode = {
 	"mode",
 	fmt = function(str)
-		return "-- " .. str .. " --"
+		return " " .. str .. " "
 	end,
 }
 
@@ -52,10 +52,9 @@ local location = {
 local progress = function()
 	local current_line = vim.fn.line(".")
 	local total_lines = vim.fn.line("$")
-	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[index]
+	local line_ratio = (current_line / total_lines) * 100.0
+	local index = " " .. math.floor(line_ratio) .. "%% "
+	return index
 end
 
 local spaces = function()
@@ -72,13 +71,13 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
-		lualine_c = {},
+		lualine_a = { mode  },
+		lualine_b = { branch, diff },
+		lualine_c = { diagnostics },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding" },
+		lualine_x = { "encoding" },
 		lualine_y = { filetype },
-		lualine_z = { location },
+		lualine_z = { progress },
 	},
 	inactive_sections = {
 		lualine_a = {},
