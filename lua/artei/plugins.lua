@@ -88,7 +88,8 @@ return packer.startup(function(use)
   -- Terminal Stuff
   use "akinsho/toggleterm.nvim"
    
-  
+  -- discord rich presence
+  use 'andweeb/presence.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
