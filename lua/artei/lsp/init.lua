@@ -4,4 +4,6 @@ if not status_ok then
 end
 
 require "artei.lsp.lsp-installer"
+require "artei.lsp.null-ls"
 require("artei.lsp.handlers").setup()
+

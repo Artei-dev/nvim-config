@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use 'goolord/alpha-nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Colorschemes
   use "sainnhe/everforest"
@@ -67,6 +68,8 @@ return packer.startup(function(use)
 -- LSP
   use "neovim/nvim-lspconfig"  
   use "williamboman/nvim-lsp-installer" -- server installer
+  use "jose-elias-alvarez/null-ls.nvim" -- server installer
+  use "RRethy/vim-illuminate"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim" 
@@ -88,8 +91,12 @@ return packer.startup(function(use)
   -- Terminal Stuff
   use "akinsho/toggleterm.nvim"
    
-  -- discord rich presence
+  -- Discord rich presence
   use 'andweeb/presence.nvim'
+
+  -- Language support
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
